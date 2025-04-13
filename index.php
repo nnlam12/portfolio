@@ -30,30 +30,66 @@
             background-size: 100% 200%, 200px 200px; /* Gradient is twice as tall for smooth animation */
             background-blend-mode: overlay; /* Blends the pattern with the gradient */
             animation: gradientShift 20s infinite linear; /* Continuous animation */
+            transition: margin-left 0.4s ease; /* Smooth transition for body margin */
+            
         }
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #333;
+            top: 20px; /* Position the circle slightly below the top */
+            left: 20px; /* Position the circle slightly from the left */
+            width: 50px; /* Initial circle diameter */
+            height: 50px; /* Initial circle diameter */
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
             color: #fff;
-            padding: 1rem 0;
-            text-align: center;
+            border-radius: 50%; /* Make it a circle */
             z-index: 1000;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+            transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease; /* Smooth transition for expansion */
+            overflow: hidden; /* Hide overflowing content */
         }
+
+        header:hover {
+            width: 250px; /* Expand width on hover */
+            height: 32%; /* Expand height to full screen */
+            border-radius: 10%; /* Remove rounded corners to make it a rectangle */
+        }
+
         header nav {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            flex-direction: column; /* Stack links vertically */
+            align-items: center; /* Center links horizontally */
+            gap: 1rem; /* Space between links */
+            margin-top: 2rem; /* Add space at the top */
+            opacity: 0; /* Initially hide links */
+            transform: translateY(-20px); /* Slide links up */
+            transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s; /* Smooth transition with delay */
         }
+
+        header:hover nav {
+            opacity: 1; /* Show links on hover */
+            transform: translateY(0); /* Reset slide effect */
+        }
+
         header nav a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1rem; /* Adjust font size */
+            padding: 0.5rem 1rem; /* Padding for clickable area */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+            white-space: nowrap; /* Prevent text wrapping */
         }
+
+        header nav a:hover {
+            background-color: #0072ff; /* Highlight color on hover */
+            color: #fff; /* Ensure text remains readable */
+        }
+
+        header:hover ~ body {
+            margin-left: 250px; /* Adjust margin for expanded sidebar */
+        }
+
         section {
             height: 100vh;
             display: flex;
@@ -64,6 +100,12 @@
         }
         #home {
             background: rgba(255, 255, 255, 0.1); /* Semi-transparent overlay */
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center-align text */
+            padding: 2rem;
         }
         #about {
             background: rgba(255, 255, 255, 0.1);
@@ -109,10 +151,69 @@
                 font-size: 1rem; /* Adjust paragraph size */
             }
         }
+
+        /* Profile picture styling */
+        header .profile-picture,
+        #home .profile-picture {
+            width: 200px; /* Increased size of the profile picture */
+            height: 200px; /* Increased size of the profile picture */
+            border-radius: 50%; /* Make it circular */
+            background: rgba(255, 255, 255, 0.2); /* Light semi-transparent background */
+            margin: 1rem auto; /* Center the picture and add spacing */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ensure the image stays within the circle */
+            border: 3px solid #fff; /* Add a thicker white border */
+        }
+
+        header .profile-picture img,
+        #home .profile-picture img {
+            width: 100%; /* Make the image fill the container */
+            height: 100%; /* Make the image fill the container */
+            object-fit: cover; /* Ensure the image scales properly */
+            border-radius: 50%; /* Ensure the image is circular */
+        }
+
+        #home .profile-picture {
+            margin-bottom: 1rem; /* Add spacing below the picture */
+        }
+
+        /* Hamburger menu styling */
+        header .hamburger {
+            display: flex;
+            flex-direction: column; /* Stack the stripes vertically */
+            justify-content: space-between; /* Evenly space the stripes */
+            align-items: center;
+            width: 30px; /* Width of the hamburger menu */
+            height: 20px; /* Height of the hamburger menu */
+            position: absolute;
+            top: 15px; /* Position inside the header */
+            left: 10px; /* Position inside the header */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        header .hamburger div {
+            width: 100%; /* Full width of the hamburger menu */
+            height: 4px; /* Height of each stripe */
+            background-color: #fff; /* White color for the stripes */
+            border-radius: 2px; /* Slightly rounded edges */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        header:hover .hamburger div {
+            background-color: #0072ff; /* Change color on hover */
+        }
+
     </style>
 </head>
 <body>
     <header>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -122,8 +223,15 @@
         </nav>
     </header>
     <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>This is the Home section.</p>
+        <div class="profile-picture">
+            <!-- Placeholder image -->
+            <img src="./Cat03.jpg" alt="Profile Picture">
+        </div>
+        <h1>Hello!</h1>
+        <p style="font-size: 1.5rem;">My name is Nhat Lam NGUYEN, I'm an engineering student in 3rd year at INSA Centre Val-de-Loire. For now, I'm aiming to ...</p>
+        <div style="background-color: rgba(255, 255, 255, 0.2); color: #fff; padding: 1rem; border-radius: 10px; max-width: 600px; text-align: center; font-weight: bold;">
+            <p style="font-size: 1.5rem;">Sign an apprenticeship contract starting September 2025 with a focus on Cybersecurity/Pentesting</p>
+        </div>
     </section>
     <section id="about">
         <h1>About Me</h1>
