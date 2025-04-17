@@ -15,10 +15,10 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background: linear-gradient(to bottom, #00a2ff, #0072ff, #001f3f); /* Initial gradient */
+    background: linear-gradient(to bottom, #00a2ff, #0072ff, #000000); /* Initial gradient */
     color: #fff; /* Ensures text is readable on the dark background */
     background-image: 
-        linear-gradient(to bottom, #00a2ff, #0072ff, #001f3f), /* Updated sea-like gradient */
+        linear-gradient(to bottom, #00a2ff, #0072ff, #000000), /* Updated sea-like gradient */
         url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity="0.1"><text x="0" y="20" font-size="20" fill="lime">010101</text><text x="0" y="40" font-size="20" fill="lime">101010</text><text x="0" y="60" font-size="20" fill="lime">010101</text></svg>'); /* Cybersecurity pattern */
     background-size: 100% 200%, 200px 200px; /* Gradient is twice as tall for smooth animation */
     background-blend-mode: overlay; /* Blends the pattern with the gradient */
@@ -103,9 +103,62 @@ section {
 #about {
     background: rgba(255, 255, 255, 0.1);
 }
+/* Challenges Section */
 #challenges {
-    background: rgba(255, 255, 255, 0.1);
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping if there are too many items */
+    justify-content: center; /* Center items horizontally */
+    gap: 2rem; /* Add spacing between items */
+    padding: 2rem; /* Add padding around the section */
+    background: rgba(255, 255, 255, 0.1); /* Keep the background */
 }
+
+.challenge-item {
+    position: relative; /* Enable positioning for hover effect */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack icon and title vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    margin: 0; /* Remove extra margin (gap handles spacing) */
+    width: 200px; /* Width of the box */
+    height: 200px; /* Initial height of the box */
+    border: 3px solid #0072ff; /* Thicker border around the box */
+    border-radius: 15px; /* Rounded corners */
+    background-color: #fff; /* White background for the box */
+    overflow: hidden; /* Hide content outside the box */
+    transition: height 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.challenge-item:hover {
+    height: 300px; /* Increase height on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.challenge-icon {
+    width: 150px; /* Icon size */
+    height: 150px; /* Icon size */
+    object-fit: cover; /* Ensure the image scales properly */
+    border-radius: 10px; /* Rounded corners */
+    margin: 0 auto; /* Center the icon horizontally */
+    display: block; /* Ensure the icon is treated as a block element */
+    margin-top: 3rem; /* Add spacing above the icon */
+}
+
+.challenge-title-hover {
+    position: relative; /* Position the title inside the box */
+    color: #0072ff; /* Highlight color */
+    font-size: 1.2rem; /* Slightly larger font size */
+    font-weight: bold; /* Bold font for emphasis */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+    pointer-events: none; /* Prevent interaction */
+}
+
+.challenge-item:hover .challenge-title-hover {
+    opacity: 1; /* Show the title on hover */
+}
+
 #skills {
     background: rgba(255, 255, 255, 0.1);
 }
