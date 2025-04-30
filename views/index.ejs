@@ -8,6 +8,8 @@
     <link href="/styles.css" rel="stylesheet">
     <!-- Add custom fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header class="justify-content-between align-items-center p-3">
@@ -76,29 +78,27 @@
                     { title: "Programming", imgSrc: "/images/programming.jpg", description: "Developing software and scripts for various purposes.", text: "Builds tools and automates tasks." }
                 ]; %>
                 <% const whatIHaveDone = [
-                    { title: "CTF Competitions", imgSrc: "/images/achievements/ctf_InterINSA.png", description: "Competed in inter-university CTF competitions and achieved top rankings." },
-                    { title: "Web Vulnerability Analysis", imgSrc: "/images/web-vulnerability.jpg", description: "Analyzed and reported vulnerabilities in web applications." },
-                    { title: "Network Monitoring Tools", imgSrc: "/images/network-tools.jpg", description: "Developed and utilized tools for monitoring and securing networks." },
-                    { title: "Open-Source Contributions", imgSrc: "/images/open-source.jpg", description: "Contributed to open-source projects in the cybersecurity domain." },
-                    { title: "Ethical Hacking Certifications", imgSrc: "/images/certifications.jpg", description: "Earned certifications in ethical hacking and cybersecurity." }
+                    { title: "Programming Project AIge of EmpAIre", imgSrc: "/images/achievements/projet_python.png", description: "Develop a simple AI-based simulation of the game AoE in Python and establish decentralised multiplayer game instances on LAN network using C sockets." },
+                    { title: "CTF InterINSA", imgSrc: "/images/achievements/ctf_InterINSA.png", description: "Represent INSA CVL and compete in the CTF team contest against universities in the INSA group." },
+                    { title: "FSCS 2025", imgSrc: "/images/achievements/fcsc.jpg", description: "Finish the nation CTF contest France Cybersecurity Challenge(FCSC) at ranking 109/2046." },
                 ]; %>
                 <div class="col-md-6">
                     <h2 class="text-center mb-4">What I Can Do</h2>
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <% whatICanDo.forEach((item, index) => { %>
-    <div class="col text-center" data-description="<%= item.description + ' ' + item.text %>">
-        <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="img-fluid mb-2" style="max-width: 100px;">
-        <h5 class="fw-bold"><%= item.title %></h5>
-    </div>
-<% }); %>
+                            <div class="col text-center" data-description="<%= item.description + ' ' + item.text %>">
+                                <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="img-fluid mb-2" style="max-width: 150px;">
+                                <h5 class="fw-bold"><%= item.title %></h5>
+                            </div>
+                        <% }); %>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h2 class="text-center mb-4">What I Have Done</h2>
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <% whatIHaveDone.forEach(item => { %>
-                        <div class="col text-center">
-                        <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="img-fluid mb-2" style="max-width: 100px;">
+                        <div class="col text-center" data-description="<%= item.description %>">
+                        <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="img-fluid mb-2" style="max-width: 150px;">
                         <h5 class="fw-bold"><%= item.title %></h5>
                         </div>
                     <% }); %>

@@ -14,16 +14,17 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    background: linear-gradient(to bottom, #00a2ff, #0072ff, #000000); /* Initial gradient */
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+    background: linear-gradient(to bottom, #005e94, #00397e, #000000); /* Initial gradient */
     color: #fff; /* Ensures text is readable on the dark background */
     background-image: 
-        linear-gradient(to bottom, #00a2ff, #0072ff, #000000), /* Updated sea-like gradient */
+        linear-gradient(to bottom, #005e94, #00397e, #000000), /* Updated sea-like gradient */
         url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity="0.1"><text x="0" y="20" font-size="20" fill="lime">010101</text><text x="0" y="40" font-size="20" fill="lime">101010</text><text x="0" y="60" font-size="20" fill="lime">010101</text></svg>'); /* Cybersecurity pattern */
-    background-size: 100% 200%, 200px 200px; /* Gradient is twice as tall for smooth animation */
+    background-size: 100% 200%, 100px 100px; /* Adjust pattern size */
     background-blend-mode: overlay; /* Blends the pattern with the gradient */
-    animation: gradientShift 20s infinite linear; /* Continuous animation */
+    animation: gradientShift 40s infinite linear; /* Slower continuous animation */
     transition: margin-left 0.4s ease; /* Smooth transition for body margin */
+    position: relative; /* Ensure falling characters are positioned relative to the body */
     
 }
 header {
@@ -42,7 +43,7 @@ header {
 }
 
 header:hover {
-    width: 250px; /* Expand width on hover */
+    width: 200px; /* Expand width on hover */
     height: auto; /* Adjust height dynamically based on content */
     border-radius: 10%; /* Remove rounded corners to make it a rectangle */
 }
@@ -83,14 +84,19 @@ header:hover ~ body {
     margin-left: 250px; /* Adjust margin for expanded sidebar */
 }
 
+/* Ensure sections are flexible and adapt to screen size */
 section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
+    min-height: 100vh; /* Ensure each section takes at least the full viewport height */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center-align text */
+    padding: 2rem; /* Internal padding */
+    box-sizing: border-box; /* Include padding in height calculations */
+    margin: 0; /* Remove unusual section breaker */
 }
+
 #home {
     background: rgba(255, 255, 255, 0.1); /* Semi-transparent overlay */
     display: flex; /* Use flexbox for layout */
@@ -127,6 +133,37 @@ footer {
     color: #fff;
 }
 
+/* Responsive typography for headings */
+h1 {
+    font-size: calc(2rem + 2vw); /* Dynamically scale font size */
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: calc(1.5rem + 1.5vw); /* Dynamically scale font size */
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+h3 {
+    font-size: calc(1rem + 1vw); /* Dynamically scale font size */
+    font-weight: normal;
+    line-height: 1.3;
+}
+
+/* Responsive typography for paragraphs */
+p {
+    font-size: calc(0.9rem + 0.5vw); /* Dynamically scale font size */
+    line-height: 1.6;
+}
+
+/* Ensure images and other content scale properly */
+img {
+    max-width: 100%; /* Ensure images don't overflow */
+    height: auto; /* Maintain aspect ratio */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header nav {
@@ -139,6 +176,30 @@ footer {
     section {
         padding: 1rem; /* Reduce padding for smaller screens */
     }
+    section {
+        margin-bottom: 1rem; /* Reduce spacing for smaller screens */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    h1 {
+        font-size: calc(1.8rem + 1vw); /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: calc(1.4rem + 1vw); /* Adjust heading size */
+    }
+
+    h3 {
+        font-size: calc(0.9rem + 0.8vw); /* Adjust heading size */
+    }
+
+    p {
+        font-size: calc(0.8rem + 0.4vw); /* Adjust paragraph size */
+    }
+
+    h5 {
+        font-size: calc(0.9rem + 0.4vw); /* Slightly reduce font size */
+    }
 }
 
 @media (max-width: 480px) {
@@ -150,6 +211,30 @@ footer {
     }
     section p {
         font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    section {
+        padding: 0.5rem; /* Further reduce padding for very small screens */
+    }
+
+    h1 {
+        font-size: calc(1.5rem + 0.8vw); /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: calc(1.2rem + 0.8vw); /* Adjust heading size */
+    }
+
+    h3 {
+        font-size: calc(0.8rem + 0.6vw); /* Adjust heading size */
+    }
+
+    p {
+        font-size: calc(0.7rem + 0.3vw); /* Adjust paragraph size */
+    }
+
+    h5 {
+        font-size: calc(0.8rem + 0.3vw); /* Further reduce font size for very small screens */
     }
 }
 
@@ -211,7 +296,7 @@ header:hover .hamburger div {
 /* Small font style */
 h3 {
     font-family: 'Open Sans', sans-serif; /* Use a different font for small text */
-    font-size: 1.5rem; /* Smaller font size */
+    font-size: 1.2rem; /* Smaller font size */
     font-weight: normal; /* Normal font weight */
     line-height: 1.2; /* Line height for readability */
 }
@@ -219,7 +304,7 @@ h3 {
 h2 {
     font-family: 'Open Sans', sans-serif; /* Use a different font for medium text */
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 600;
     line-height: 1.5;
 }
 
@@ -227,7 +312,7 @@ h2 {
 h1{
     font-family: 'Open Sans', sans-serif;
     font-size: 3rem; /* Larger font size */
-    font-weight: bold; /* Bold font weight */
+    font-weight: 600; /* Bold font weight */
     line-height: 1.5; /* Line height for readability */
 }
 /* Text box styling */
@@ -284,4 +369,59 @@ h1{
     border-right: 10px solid transparent;
     border-bottom: 10px solid #ddd;
     z-index: 0;
+}
+
+/* Responsive typography for h5 */
+h5 {
+    font-size: calc(0.8rem + 0.5vw); /* Dynamically scale font size */
+    font-weight: 400; /* Keep bold styling */
+    line-height: 1.4; /* Adjust line height for readability */
+    text-align: center; /* Center-align text */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    h5 {
+        font-size: calc(0.7rem + 0.4vw); /* Slightly reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    h5 {
+        font-size: calc(0.6rem + 0.3vw); /* Further reduce font size for very small screens */
+    }
+}
+h1, h2, h3, h4, h5 {
+    font-family: Poppins, sans-serif; /* Use Poppins font for headings */
+}
+
+/* Falling character styling */
+.falling-char {
+    position: absolute;
+    top: -10%; /* Start above the viewport */
+    font-size: 1.5rem; /* Adjust size of characters */
+    color: rgba(255, 255, 255, 0.192); /* Semi-transparent white */
+    animation: fall 5s linear infinite, fade 5s ease-in-out infinite; /* Falling and fading animations */
+    pointer-events: none; /* Prevent interaction with characters */
+    z-index: 0; /* Ensure it stays in the background */
+}
+
+/* Falling animation */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(110vh); /* Move beyond the viewport */
+    }
+}
+
+/* Fading animation */
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; /* Fade out completely */
+    }
 }
