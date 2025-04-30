@@ -113,51 +113,6 @@ section {
     background: rgba(255, 255, 255, 0.1); /* Keep the background */
 }
 
-.challenge-item {
-    position: relative; /* Enable positioning for hover effect */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack icon and title vertically */
-    align-items: center; /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-    margin: 0; /* Remove extra margin (gap handles spacing) */
-    width: 200px; /* Width of the box */
-    height: 200px; /* Initial height of the box */
-    border: 3px solid #0072ff; /* Thicker border around the box */
-    border-radius: 15px; /* Rounded corners */
-    background-color: #fff; /* White background for the box */
-    overflow: hidden; /* Hide content outside the box */
-    transition: height 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    cursor: pointer; /* Change cursor to pointer */
-}
-
-.challenge-item:hover {
-    height: 300px; /* Increase height on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
-}
-
-.challenge-icon {
-    width: 150px; /* Icon size */
-    height: 150px; /* Icon size */
-    object-fit: cover; /* Ensure the image scales properly */
-    border-radius: 10px; /* Rounded corners */
-    margin: 0 auto; /* Center the icon horizontally */
-    display: block; /* Ensure the icon is treated as a block element */
-    margin-top: 3rem; /* Add spacing above the icon */
-}
-
-.challenge-title-hover {
-    position: relative; /* Position the title inside the box */
-    color: #0072ff; /* Highlight color */
-    font-size: 1.2rem; /* Slightly larger font size */
-    font-weight: bold; /* Bold font for emphasis */
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease; /* Smooth fade-in effect */
-    pointer-events: none; /* Prevent interaction */
-}
-
-.challenge-item:hover .challenge-title-hover {
-    opacity: 1; /* Show the title on hover */
-}
 
 #skills {
     background: rgba(255, 255, 255, 0.1);
@@ -218,7 +173,8 @@ header .profile-picture img,
     width: 100%; /* Make the image fill the container */
     height: 100%; /* Make the image fill the container */
     object-fit: cover; /* Ensure the image scales properly */
-    border-radius: 50%; /* Ensure the image is circular */
+    display: block; /* Remove any inline spacing issues */
+    border-radius: inherit; /* Match the container's rounded corners */
 }
 
 #home .profile-picture {
@@ -251,28 +207,25 @@ header:hover .hamburger div {
     background-color: #0072ff; /* Change color on hover */
 }
 
-/* Normal font style */
-.font-normal {
-    font-size: 1.5rem; /* Default font size */
-    font-weight: normal; /* Normal font weight */
-    line-height: 1.5; /* Line height for readability */
-}
-
-/* Bold font style */
-.font-bold {
-    font-size: 1.5rem; /* Slightly larger font size */
-    font-weight: bold; /* Bold font weight */
-    line-height: 1.5; /* Line height for readability */
-}
 
 /* Small font style */
-.font-small {
-    font-size: 0.8rem; /* Smaller font size */
+h3 {
+    font-family: 'Open Sans', sans-serif; /* Use a different font for small text */
+    font-size: 1.5rem; /* Smaller font size */
     font-weight: normal; /* Normal font weight */
     line-height: 1.2; /* Line height for readability */
 }
+
+h2 {
+    font-family: 'Open Sans', sans-serif; /* Use a different font for medium text */
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
 /* Large font style */
-.font-large {
+h1{
+    font-family: 'Open Sans', sans-serif;
     font-size: 3rem; /* Larger font size */
     font-weight: bold; /* Bold font weight */
     line-height: 1.5; /* Line height for readability */
@@ -287,4 +240,48 @@ header:hover .hamburger div {
     text-align: center; 
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visibility */
+}
+.popup-card {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateY(-10px);
+}
+
+.popup-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.popup-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #f9f9f9;
+    z-index: 1;
+}
+
+.popup-card::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ddd;
+    z-index: 0;
 }

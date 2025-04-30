@@ -4,80 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+    <!-- Add custom fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
+    <header class="justify-content-between align-items-center p-3">
+        <div class="hamburger d-flex flex-column">
+            <div class="bg-white mb-1" style="height: 5px; width: 30px;"></div>
+            <div class="bg-white mb-1" style="height: 5px; width: 30px;"></div>
+            <div class="bg-white" style="height: 5px; width: 30px;"></div>
         </div>
         <nav>
-            <a href="#home" class="font-normal">Home</a>
-            <a href="#about" class="font-normal">About</a>
-            <a href="#challenges" class="font-normal">Challenges</a>
-            <a href="#contact" class="font-normal">Contact</a>
+            <a href="#home" class="text-white text-decoration-none mx-2">Home</a>
+            <a href="#about" class="text-white text-decoration-none mx-2">About</a>
+            <a href="#challenges" class="text-white text-decoration-none mx-2">Challenges</a>
+            <a href="#contact" class="text-white text-decoration-none mx-2">Contact</a>
         </nav>
     </header>
-    <section id="home">
-        <div class="profile-picture">
-            <img src="/images/Cat03.jpg" alt="Profile Picture">
+    <section id="home" class="text-center py-5">
+        <div class="profile-picture mx-auto mb-3">
+            <img src="/images/Cat03.jpg" alt="Profile Picture" class="img-fluid">
         </div>
-        <h1 class="font-bold">Hello!</h1>
-        <p class="font-normal">My name is <span class="font-bold">Nguyen Nhat Lam</span>. I'm an engineering student in 3rd year at INSA Centre Val-de-Loire. Currently, I'm aiming to ...</p>
-        <div class="text-box">
-            <p class="font-bold">Sign an apprenticeship contract starting September 2025 with a focus on Cybersecurity/Pentesting</p>
+        <h1 class="fw-bold">Hello!</h1>
+        <h3>My name is <span class="fw-bold">Nguyen Nhat Lam</span>. I'm an engineering student in 3rd year at INSA Centre Val-de-Loire. Currently, I'm aiming to ...</h3>
+        <div class="text-box bg-light text-dark p-3 rounded">
+            <h3 class="fw-bold">Sign an apprenticeship contract starting September 2025 with a focus on Cybersecurity/Pentesting</h3>
         </div>
     </section>
-    <section id="about">
-        <div>
-            <p class="font-large">About Me</p>
-            <p class="font-normal">
-                My name is <span class="font-bold">Nhat Lam NGUYEN</span>. Having come a long way from Vietnam, I'm now a 3rd-year engineering student at INSA Centre Val de Loire, France.
-            </p>
-            <p class="font-normal">
-                Driven by a desire to learn and dive deep into the world of computers, I am following the path of <span class="font-bold">ethical hacking</span> and <span class="font-bold">cybersecurity</span>.
-            </p>
-            <p class="font-normal">
-                Most of the time, I practice <span class="font-bold">CTF (Capture The Flag)</span> challenges, where I can apply my knowledge and skills in a practical way. I also enjoy learning about <span class="font-bold">web hacking</span> and <span class="font-bold">network security</span>.
-            </p>
-            <p class="font-normal">
+    <section id="about" class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">About Me</h1>
+            <div class="row">
+            <div class="col-md-12">
+                <h3>
+                Having come a long way from Vietnam, I'm now a 3rd-year engineering student at INSA Centre Val de Loire, France.
+                Driven by a desire to learn and dive deep into the world of computers, I am following the path of 
+                <span class="fw-bold">ethical hacking</span> and <span class="fw-bold">cybersecurity</span>.
+                </h3>
+                <h3>
+                Most of the time, I practice <span class="fw-bold">CTF (Capture The Flag)</span> challenges, where I can apply my knowledge and skills in a practical way. 
+                I also enjoy learning about <span class="fw-bold">web hacking</span> and <span class="fw-bold">network security</span>.
+                </h3>
+                <h3>
                 Nevertheless, I am not limited to these areas. As long as I can challenge myself and learn something new, I am open to exploring other fields.
-            </p>
-            <p class="font-normal">
-                My goal is to become a <span class="font-bold">cybersecurity expert</span>, whether as a <span class="font-bold">pentester</span>, <span class="font-bold">security analyst</span>, or even a <span class="font-bold">researcher</span>—any role that allows me to partake in the fight against cybercrime and contribute to the security of our digital world.
-            </p>
-            <p class="font-normal">
+                </h3>
+                <h3>
+                My goal is to become a <span class="fw-bold">cybersecurity expert</span>, whether as a <span class="fw-bold">pentester</span>, 
+                <span class="fw-bold">security analyst</span>, or even a <span class="fw-bold">researcher</span>—any role that allows me to partake in the fight against cybercrime 
+                and contribute to the security of our digital world.
+                </h3>
+                <h3>
                 If by any chance you are looking for a new member for your team, I would be delighted to discuss my skills and how I can contribute to your company.
-            </p>
-            <p class="font-normal">
-                Recruiting or not, you are more than welcome to check out my <a href="#" class="font-bold">CV</a> or <a href="#contact" class="font-bold">contact me directly</a>.
-            </p>
-            <p class="font-normal">
-                Until then, I wish you a fascinating trip through my ever-expanding <span class="font-bold">Cyber ocean</span>.
-            </p>
-        </div>
-    </section>
-    <section id="challenges">
-        <div>
-            <h1 class="font-large">Challenges</h1>
-            <div class="challenge-item">
-                <img src="/images/CaTF.png" alt="Challenge Icon" class="challenge-icon">
-                <span class="challenge-title-hover"> CaTF</span>
+                </h3>
+                <h3>
+                Recruiting or not, you are more than welcome to check out my <a href="#" class="fw-bold text-white">CV</a> or 
+                <a href="#contact" class="fw-bold text-white">contact me directly</a>.
+                </h3>
+                <h3>
+                Until then, I wish you a fascinating trip through my ever-expanding <span class="fw-bold">Cyber ocean</span>.
+                </h3>
+            </div>
+            </div>
+            <div class="row">
+                <% const whatICanDo = [
+                    { title: "Penetration Testing", imgSrc: "/images/penetration-testing.jpg", description: "Performing simulated cyberattacks to identify vulnerabilities.", text: "This skill helps identify and fix security flaws." },
+                    { title: "Web Application Security", imgSrc: "/images/web-security.jpg", description: "Securing web applications against common vulnerabilities like XSS and SQL Injection.", text: "Ensures web applications are safe from attacks." },
+                    { title: "Network Security Analysis", imgSrc: "/images/network-security.jpg", description: "Analyzing and securing network infrastructures.", text: "Protects networks from unauthorized access." },
+                    { title: "CTF Challenges", imgSrc: "/images/ctf.jpg", description: "Participating in Capture The Flag competitions to enhance cybersecurity skills.", text: "Improves problem-solving and hacking skills." },
+                    { title: "Programming", imgSrc: "/images/programming.jpg", description: "Developing software and scripts for various purposes.", text: "Builds tools and automates tasks." }
+                ]; %>
+                <% const whatIHaveDone = [
+                    { title: "CTF Competitions", imgSrc: "/images/achievements/ctf_InterINSA.png", description: "Competed in inter-university CTF competitions and achieved top rankings." },
+                    { title: "Web Vulnerability Analysis", imgSrc: "/images/web-vulnerability.jpg", description: "Analyzed and reported vulnerabilities in web applications." },
+                    { title: "Network Monitoring Tools", imgSrc: "/images/network-tools.jpg", description: "Developed and utilized tools for monitoring and securing networks." },
+                    { title: "Open-Source Contributions", imgSrc: "/images/open-source.jpg", description: "Contributed to open-source projects in the cybersecurity domain." },
+                    { title: "Ethical Hacking Certifications", imgSrc: "/images/certifications.jpg", description: "Earned certifications in ethical hacking and cybersecurity." }
+                ]; %>
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">What I Can Do</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <% whatICanDo.forEach((item, index) => { %>
+    <div class="col text-center" data-description="<%= item.description + ' ' + item.text %>">
+        <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="img-fluid mb-2" style="max-width: 100px;">
+        <h5 class="fw-bold"><%= item.title %></h5>
+    </div>
+<% }); %>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">What I Have Done</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <% whatIHaveDone.forEach(item => { %>
+                        <div class="col text-center">
+                        <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="img-fluid mb-2" style="max-width: 100px;">
+                        <h5 class="fw-bold"><%= item.title %></h5>
+                        </div>
+                    <% }); %>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section id="contact">
-        <div>
-            <h1 class="font-large">Contact</h1>
-            <p class="font-normal">
-                This is the Contact section.
-            </p>
+    <section id="challenges" class="py-5">
+        <div class="container ">
+            <h1 class="text-center mb-4">Challenges</h1>
+            <div class="row justify-content-center">                                                                                                                                                                                                                                                                                                                                                                                                                
+                <% const challenges = [
+                    { src: "/images/CaTF.png", alt: "CaTF", popup: "Help Ethel find her friend at the ocean floor.", text: "A fun and engaging underwater adventure." }
+                ]; %>
+
+                <% challenges.forEach((challenge, index) => { %>
+    <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <div class="card" style="width: 18rem;" data-description="<%= challenge.popup + ' ' + challenge.text %>">
+            <img src="<%= challenge.src %>" class="card-img-top" alt="<%= challenge.alt %>">
+            <div class="card-body">
+                <h5 class="card-title"><%= challenge.alt %></h5>
+            </div>
         </div>
+    </div>
+<% }); %>
+            </div>
     </section>
-    <footer>
-        <p class="font-small"><%= year %> My Portfolio</p>
+    <section id="contact" class=" py-5">
+        <h2 class="text-center mb-4">Contact</h2>
+        <p class="text-center">This is the Contact section.</p>
+    </section>
+    <footer class="text-center py-3 bg-dark text-white">
+        <p><%= year %> My Portfolio</p>
     </footer>
+    <script src="/scripts.js"></script>
+    
 </body>
 </html>
