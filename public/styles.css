@@ -18,8 +18,7 @@ body {
     background: linear-gradient(to bottom, #005e94, #00397e, #000000); /* Initial gradient */
     color: #fff; /* Ensures text is readable on the dark background */
     background-image: 
-        linear-gradient(to bottom, #005e94, #00397e, #000000), /* Updated sea-like gradient */
-        url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity="0.1"><text x="0" y="20" font-size="20" fill="lime">010101</text><text x="0" y="40" font-size="20" fill="lime">101010</text><text x="0" y="60" font-size="20" fill="lime">010101</text></svg>'); /* Cybersecurity pattern */
+        linear-gradient(to bottom, #005e94, #00397e, #000000); /* Updated sea-like gradient */
     background-size: 100% 200%, 100px 100px; /* Adjust pattern size */
     background-blend-mode: overlay; /* Blends the pattern with the gradient */
     animation: gradientShift 40s infinite linear; /* Slower continuous animation */
@@ -424,4 +423,140 @@ h1, h2, h3, h4, h5 {
     100% {
         opacity: 0; /* Fade out completely */
     }
+}
+
+/* Shared card hover effect for all cards */
+.challenge-card,
+.skill-card {
+    transition: transform 0.35s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+    z-index: 1;
+}
+
+.challenge-card:hover,
+.skill-card:hover {
+    transform: scale(1.8); /* Increased from 1.15 to 1.28 for a bigger effect */
+    z-index: 10;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.30);
+}
+
+.challenge-desc-overlay,
+.card-desc-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.challenge-card:hover .challenge-desc-overlay,
+.skill-card:hover .card-desc-overlay {
+    opacity: 1;
+    pointer-events: auto;
+    pointer-events: auto;
+}
+
+/* Make cards bigger */
+.skill-card,
+.challenge-card {
+    width: 18rem !important;      /* Increase card width */
+    height: 20rem !important;     /* Set a fixed, larger height */
+    perspective: 1200px;          /* Needed for 3D flip effect */
+    transition: none;             /* Remove scale transition for flip */
+    z-index: 1;
+    background: transparent;
+    border: none;
+}
+
+/* Card inner wrapper for flipping */
+.skill-card .card-inner,
+.challenge-card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(.4,2,.6,1);
+    transform-style: preserve-3d;
+}
+
+/* Flip on hover */
+.skill-card:hover .card-inner,
+.challenge-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Card front and back faces */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front {
+    background: #1e225a;
+    z-index: 2;
+}
+
+.card-back {
+    background: rgba(30, 34, 90, 0.97);
+    transform: rotateY(180deg);
+    z-index: 3;
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+/* Adjust overlay styles for card-back */
+.card-back h5 {
+    font-size: 1rem;
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+.card-back p {
+    font-size: 0.85rem;
+    color: #f8f9fa;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0.2rem;
+}
+.card-back hr {
+    width: 60%;
+    border-top: 1px solid #ffd700;
+    margin: 0.3rem auto 0.7rem auto;
+    opacity: 0.5;
+}
+
+
+.falling-container {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+.falling-char {
+    position: absolute;
+    top: -2rem;
+    color: rgba(255, 255, 255, 0.05);
+    animation: css-fall 1 linear forwards;
+    /* animation-duration set dynamically by JS */
+    pointer-events: none;
+    user-select: none;
+    will-change: transform, opacity;
+}
+@keyframes css-fall {
+    0% { top: -2rem; opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 110vh; opacity: 0; }
 }

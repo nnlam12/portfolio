@@ -26,14 +26,19 @@
         </nav>
     </header>
     <section id="home" class="text-center py-5">
-        <div class="profile-picture mx-auto mb-3">
-            <img src="/images/Cat03.jpg" alt="Profile Picture" class="img-fluid">
+        <br><br><br><br><br>
+        <div class="profile-picture mx-auto mb-5">
+            <img src="/images/photo_pro.jpg" alt="Profile Picture" class="img-fluid">
         </div>
         <h1 class="fw-bold">Hello!</h1>
-        <h3>My name is <span class="fw-bold">Nguyen Nhat Lam</span>. I'm an engineering student in 3rd year at INSA Centre Val-de-Loire. Currently, I'm aiming to ...</h3>
+        <h3>My name is <span class="fw-bold">Nguyen Nhat Lam</span>. I'm an engineering student in 3rd year at <a href="https://www.insa-centrevaldeloire.fr/" target="_blank" rel="noopener noreferrer" class="fw-bold text-white">INSA Centre Val-de-Loire</a>. Currently, I'm aiming to ...</h3>
         <div class="text-box bg-light text-dark p-3 rounded">
             <h3 class="fw-bold">Sign an apprenticeship contract starting September 2025 with a focus on Cybersecurity/Pentesting</h3>
         </div>
+        <div class="mt-4"></div>
+            <a href="/documents/CV.pdf" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Download My CV</a>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
     <section id="about" class="py-5">
         <div class="container">
@@ -62,49 +67,89 @@
                 </h3>
                 <h3>
                 Recruiting or not, you are more than welcome to check out my <a href="#" class="fw-bold text-white">CV</a> or 
-                <a href="#contact" class="fw-bold text-white">contact me directly</a>.
+                <a href="#contact" class="fw-bold text-white">contact me directly</a>. Also you can take your time to explore my <a href="#challenges" class="fw-bold text-white">CTF challenges</a>.
                 </h3>
                 <h3>
                 Until then, I wish you a fascinating trip through my ever-expanding <span class="fw-bold">Cyber ocean</span>.
                 </h3>
             </div>
             </div>
+            <br><br><br><br><br><br><br><br><br>
             <div class="row">
                 <% const whatICanDo = [
-                    { title: "Python", imgSrc: "/images/achievements/python.png", description: "Other than LeetCode and projects, I also use Python for scripting in ethical hacking.", text: "" },
-                    { title: "C", imgSrc: "/images/achievements/c.png", description: "I use C for low-level programming and reverse engineering.", text: "" },
-                    { title: "HTML/CSS/JS", imgSrc: "/images/achievements/web.png", description: "I use HTML/CSS/JS for web development.", text: "" },
-                    { title: "Kali Linux", imgSrc: "/images/achievements/linux.png", description: "I use Kali Linux as my main OS.", text: "" },
-                    { title: "Git", imgSrc: "/images/achievements/git.jpg", description: "I use Git for version control.", text: "" },
-                    { title: "Cryptanalysis", imgSrc: "/images/achievements/cryptanalysis.svg", description: "Analyse and break down cryptographic systems to ensure their security.", text: "" },
-                    { title: "Network analysis", imgSrc: "/images/achievements/network.svg", description: "Inspect networking protocols", text: "" },
-                    { title: "Web pentesting", imgSrc: "/images/achievements/web.svg", description: "Analyze web applications for vulnerabilities.", text: "" },
-                    { title: "Forensics", imgSrc: "/images/achievements/forensics.svg", description: "Investigate digital evidence to uncover the truth.", text: "" },
-                    { title: "Reverse engineering", imgSrc: "/images/achievements/reverse.svg", description: "Basic binary analysis and exploitation.", text: "" }
+                { title: "Python", imgSrc: "/images/achievements/python.png", description: "I use Python extensively for scripting in ethical hacking, automating tasks, and solving challenges. Additionally, I leverage Python for algorithmic problem-solving on platforms like LeetCode and for developing various projects, showcasing its versatility and power." },
+                { title: "C", imgSrc: "/images/achievements/c.png", description: "With a strong foundation in low-level programming, I use C to understand and manipulate system-level operations. My expertise extends to basic reverse engineering and binary analysis." },
+                { title: "Kali Linux", imgSrc: "/images/achievements/linux.png", description: "As my primary operating system for ethical hacking and penetration testing, Kali Linux equips me with a comprehensive suite of tools for cybersecurity tasks. My proficiency in Kali Linux allows me to efficiently identify and exploit vulnerabilities in various systems." },
+                { title: "Git", imgSrc: "/images/achievements/git.jpg", description: "I am adept at using Git for version control, ensuring seamless collaboration and efficient management of codebases. Whether working individually or in a team, Git enables me to maintain a structured and organized workflow for software development." },
+                { title: "Cryptanalysis", imgSrc: "/images/achievements/cryptanalysis.svg", description: "My skills in cryptanalysis involve studying and breaking down cryptographic systems to evaluate their security. This expertise helps in identifying weaknesses and ensuring the robustness of encryption mechanisms." },
+                { title: "Network analysis", imgSrc: "/images/achievements/network.svg", description: "I specialize in inspecting and analyzing networking protocols to identify vulnerabilities, optimize performance, and ensure secure communication. My knowledge extends to tools and techniques for monitoring and troubleshooting network issues." },
+                { title: "Web pentesting", imgSrc: "/images/achievements/web.svg", description: "I excel in analyzing web applications for vulnerabilities, employing techniques such as SQL injection, XSS, and CSRF testing as well as mastering with web programming languages(HTML,JS,PHP...). My goal is to ensure the security and integrity of web-based systems by identifying and mitigating potential threats." },
+                { title: "Forensics", imgSrc: "/images/achievements/forensics.svg", description: "With a keen eye for detail, I investigate digital evidence to uncover the truth behind cyber incidents. My forensics expertise includes data recovery, malware analysis, and tracing the origins of security breaches." },
+                { title: "Reverse engineering", imgSrc: "/images/achievements/reverse.svg", description: "I possess foundational skills in reverse engineering, enabling me to analyze binaries, understand software behavior, and identify potential vulnerabilities. This knowledge is crucial for debugging and enhancing system security." },
+                { title: "Even more", imgSrc: "/images/achievements/more.png", description: "I am always eager to learn and master new technologies and tools. My adaptability and curiosity drive me to explore emerging fields and expand my skill set to stay ahead in the ever-evolving world of technology." },
                 ]; %>
                 <% const whatIHaveDone = [
-                    { title: "Programming Project AIge of EmpAIre", imgSrc: "/images/achievements/projet_python.png", description: "Develop a simple AI-based simulation of the game AoE in Python and establish decentralised multiplayer game instances on LAN network using C sockets." },
+                    { title: "Programming Project AIge of EmpAIre", imgSrc: "/images/achievements/projet_python.png", description: "Develop a simple AI-based simulation of the game AoE in Python and establish decentralised multiplayer game instances on LAN network using C sockets.", link: "https://github.com/Maxeuh/AIge-of-EmpAIres", altLink: "Github"},
                     { title: "CTF InterINSA", imgSrc: "/images/achievements/ctf_InterINSA.png", description: "Represent INSA CVL and compete in the CTF team contest against universities in the INSA group." },
-                    { title: "FSCS 2025", imgSrc: "/images/achievements/fcsc.jpg", description: "Finish the nation CTF contest France Cybersecurity Challenge(FCSC) at ranking 109/2046." },
+                    { title: "FCSC 2025", imgSrc: "/images/achievements/fcsc.jpg", description: "Finish the national CTF contest France Cybersecurity Challenge(FCSC) at ranking 109/2046.", link: "https://fcsc.fr/users/1049", altLink: "nnlamm@FCSC_2025" },
+                    { title: "CTF TryHackMe", imgSrc: "/images/achievements/thm.png", description: "Actively learn and solve CTFs challenges on Tryhackme aside from school and contests", link: "https://tryhackme.com/p/nhatlamnguyen121", altLink: "nhatlamnguyen121@THM" },
+                    { title: "CTF RootMe", imgSrc: "/images/achievements/rootme.jpeg", description: "Participate in CTF challenges on RootMe and earn points.", link: "https://www.root-me.org/nnlam12", altLink: "nnlam12@ROOTME" },
                 ]; %>
                 <div class="col-md-6">
                     <h2 class="text-center mb-4">What I Can Do</h2>
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <% whatICanDo.forEach((item, index) => { %>
-                            <div class="col text-center" data-description="<%= item.description + ' ' + item.text %>">
-                                <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="img-fluid mb-2" style="max-width: 150px;">
-                                <h5 class="fw-bold"><%= item.title %></h5>
+                            <div class="col text-center d-flex justify-content-center mb-4">
+                                <div class="card skill-card position-relative overflow-hidden">
+                                    <div class="card-inner">
+                                        <div class="card-front d-flex flex-column justify-content-center align-items-center">
+                                            <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="card-img-top" style="max-height:120px;object-fit:contain;">
+                                        </div>
+                                        <div class="card-back d-flex flex-column justify-content-center align-items-center text-center px-2 py-3">
+                                            <h5 class="fw-bold card-title mb-2"
+                                                style="font-family: 'Poppins', sans-serif; font-size: 0.80rem; color: #ffd700; letter-spacing: 0.5px;">
+                                                <%= item.title %>
+                                            </h5>
+                                            <hr style="width: 60%; border-top: 1px solid #ffd700; margin: 0.3rem auto 0.7rem auto; opacity: 0.5;">
+                                            <p class="mb-0"
+                                               style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f8f9fa;">
+                                                <%= item.description || "No description available" %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         <% }); %>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h2 class="text-center mb-4">What I Have Done</h2>
+                    <h2 class="text-center mb-4">What I Have Accomplished</h2>
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <% whatIHaveDone.forEach(item => { %>
-                        <div class="col text-center" data-description="<%= item.description %>">
-                        <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="img-fluid mb-2" style="max-width: 150px;">
-                        <h5 class="fw-bold"><%= item.title %></h5>
+                        <div class="col text-center d-flex justify-content-center mb-4">
+                            <div class="card skill-card position-relative overflow-hidden">
+                                <div class="card-inner">
+                                    <div class="card-front d-flex flex-column justify-content-center align-items-center">
+                                        <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="card-img-top" style="max-height:120px;object-fit:contain;">
+                                    </div>
+                                    <div class="card-back d-flex flex-column justify-content-center align-items-center text-center px-2 py-3">
+                                        <h5 class="fw-bold card-title mb-2"
+                                            style="font-family: 'Poppins', sans-serif; font-size: 0.80rem; color: #ffd700; letter-spacing: 0.5px;">
+                                            <%= item.title %>
+                                        </h5>
+                                        <hr style="width: 60%; border-top: 1px solid #ffd700; margin: 0.3rem auto 0.7rem auto; opacity: 0.5;">
+                                        <p class="mb-0"
+                                           style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f8f9fa;">
+                                            <%= item.description || "No description available" %>
+                                        </p>
+                                        <% if (item.link && item.altLink) { %>
+                                            <a href="<%= item.link %>" class=" btn-primary mt-2" target="_blank" rel="noopener noreferrer">
+                                                <%= item.altLink %>
+                                            </a>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     <% }); %>
                     </div>
@@ -117,15 +162,36 @@
             <h1 class="text-center mb-4">Challenges</h1>
             <div class="row justify-content-center">                                                                                                                                                                                                                                                                                                                                                                                                                
                 <% const challenges = [
-                    { src: "/images/CaTF.png", alt: "CaTF", popup: "Help Ethel find her friend at the ocean floor.", text: "A fun and engaging underwater adventure." }
+                    { src: "/images/CaTF.png", alt: "CaTF", popup: "Help Ethel find her friend at the ocean floor.", text: "A fun and engaging underwater adventure.", link: "https://catf.nnlamcyber.com", altLink: "Start challenge" }
                 ]; %>
 
                 <% challenges.forEach((challenge, index) => { %>
     <div class="col-md-4 mb-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;" data-description="<%= challenge.popup + ' ' + challenge.text %>">
-            <img src="<%= challenge.src %>" class="card-img-top" alt="<%= challenge.alt %>">
-            <div class="card-body">
-                <h5 class="card-title"><%= challenge.alt %></h5>
+        <div class="card challenge-card position-relative overflow-hidden">
+            <div class="card-inner">
+                <div class="card-front d-flex flex-column justify-content-center align-items-center">
+                    <img src="<%= challenge.src %>" class="card-img-top" alt="<%= challenge.alt %>" style="max-height:180px;object-fit:contain;">
+                </div>
+                <div class="card-back d-flex flex-column justify-content-center align-items-center text-center px-2 py-3">
+                    <h5 class="fw-bold card-title mb-2"
+                        style="font-family: 'Poppins', sans-serif; font-size: 0.80rem; color: #ffd700; letter-spacing: 0.5px;">
+                        <%= challenge.alt %>
+                    </h5>
+                    <hr style="width: 60%; border-top: 1px solid #ffd700; margin: 0.3rem auto 0.7rem auto; opacity: 0.5;">
+                    <p class="mb-1"
+                       style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f8f9fa;">
+                        <%= challenge.popup %>
+                    </p>
+                    <p class="mb-0"
+                       style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f8f9fa;">
+                        <%= challenge.text %>
+                    </p>
+                    <% if (challenge.link && challenge.altLink) { %>
+                        <a href="<%= challenge.link %>" class=" btn-primary mt-2" target="_blank" rel="noopener noreferrer">
+                            <%= challenge.altLink %>
+                        </a>
+                    <% } %>
+                </div>
             </div>
         </div>
     </div>
@@ -133,8 +199,26 @@
             </div>
     </section>
     <section id="contact" class=" py-5">
-        <h2 class="text-center mb-4">Contact</h2>
-        <p class="text-center">This is the Contact section.</p>
+        <h1 class="text-center mb-4">Contact</h1>
+        <p   class="text-center">Feel free to reach out to me </p>
+        <h6 class="text-center; font-size: 0.20rem">For discussions on professional oppotunities, questions and issues about the challenges or simply a casual exchange</h6>
+        <div class="d-flex justify-content-center">
+            <a href="https://github.com/nnlam12" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/github.png" alt="LinkedIn" style="height: 120px; width: 100px; margin-right: 5px;">
+            </a>
+            <a href="https://www.linkedin.com/in/nhat-lam-nguyen/" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/linkedin.png" alt="LinkedIn" style="height: 120px; width: 120px; margin-right: 5px;">
+            </a>
+            <a href="mailto:nhatlamnguyen121212@gmail.com" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/email.png" alt="Email" style="height: 120px; width: 120px; margin-right: 5px;">
+            </a>
+            <a href="https://tryhackme.com/p/nhatlamnguyen121" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/tryhackme.png" alt="TryHackMe" style="height: 120px; width: 120px; margin-right: 5px;">
+            </a>
+            <a href="https://www.root-me.org/nnlam12" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/rootme.svg" alt="RootMe" style="height: 120px; width: 120px; margin-right: 5px;">
+            </a>
+        </div>
     </section>
     <footer class="text-center py-3 bg-dark text-white">
         <p><%= year %> My Portfolio</p>
