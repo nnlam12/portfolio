@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+    <!-- Ajouter des polices personnalisées -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="justify-content-between align-items-center p-3">
+        <div class="hamburger d-flex flex-column">
+            <div class="bg-white mb-1" style="height: 5px; width: 30px;"></div>
+            <div class="bg-white mb-1" style="height: 5px; width: 30px;"></div>
+            <div class="bg-white" style="height: 5px; width: 30px;"></div>
+        </div>
+        <nav>
+            <a href="#home" class="text-white text-decoration-none mx-2">Accueil</a>
+            <a href="#about" class="text-white text-decoration-none mx-2">À propos</a>
+            <a href="#challenges" class="text-white text-decoration-none mx-2">Challenges</a>
+            <a href="#contact" class="text-white text-decoration-none mx-2">Contact</a>
+        </nav>
+    </header>
+    <section id="home" class="text-center py-5">
+        <br><br><br><br><br>
+        <div class="profile-picture mx-auto mb-5">
+            <img src="/images/photo_pro.jpg" alt="Photo de profil" class="img-fluid">
+        </div>
+        <h1 class="fw-bold">Bonjour !</h1>
+        <h3>Je m'appelle <span class="fw-bold">Nhat Lam NGUYEN</span>. Je suis étudiant en 3ème année d'ingénierie à <a href="https://www.insa-centrevaldeloire.fr/" target="_blank" rel="noopener noreferrer" class="fw-bold text-white">l'INSA Centre Val-de-Loire</a>. Actuellement, je vise à ...</h3>
+        <div class="text-box bg-light text-dark p-3 rounded">
+            <h3 class="fw-bold">Signer un contrat d'apprentissage à partir de septembre 2025, axé sur la cybersécurité/pentest</h3>
+        </div>
+        <div class="mt-4"></div>
+            <a href="/documents/CV_Nhat_Lam_NGUYEN_INSA_CVL.pdf" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
+        </div>
+        <div class="mt-4"></div>
+            <a href="/documents/Calendrier_apprentissage_2024_-_2027.pdf" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Télécharger mon calendrier d'apprentissage</a>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </section>
+    <section id="about" class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">À propos de moi</h1>
+            <div class="row">
+            <div class="col-md-12">
+                <h3>
+                Originaire du Vietnam, je suis actuellement étudiant en 3ème année d'ingénierie à l'INSA Centre Val de Loire, en France.
+                Animé par une envie d'apprendre et de plonger dans le monde de l'informatique, je suis sur la voie du 
+                <span class="fw-bold">hacking éthique</span> et de la <span class="fw-bold">cybersécurité</span>.
+                </h3>
+                <h3>
+                La plupart du temps, je pratique des <span class="fw-bold">CTF (Capture The Flag)</span>, où je peux appliquer mes connaissances et compétences de manière pratique. 
+                J'aime également apprendre sur le <span class="fw-bold">hacking web</span> et la <span class="fw-bold">sécurité réseau</span>.
+                </h3>
+                <h3>
+                Cependant, je ne me limite pas à ces domaines. Tant que je peux me challenger et apprendre quelque chose de nouveau, je suis ouvert à explorer d'autres champs.
+                </h3>
+                <h3>
+                Mon objectif est de devenir un <span class="fw-bold">expert en cybersécurité</span>, que ce soit en tant que <span class="fw-bold">pentester</span>, 
+                <span class="fw-bold">analyste sécurité</span>, ou même <span class="fw-bold">chercheur</span>—tout rôle qui me permet de participer à la lutte contre la cybercriminalité 
+                et de contribuer à la sécurité de notre monde numérique.
+                </h3>
+                <h3>
+                Si par hasard vous cherchez un nouveau membre pour votre équipe, je serais ravi de discuter de mes compétences et de la manière dont je peux contribuer à votre entreprise.
+                </h3>
+                <h3>
+                Que vous recrutiez ou non, vous êtes plus que bienvenu à consulter mon <a href="#" class="fw-bold text-white">CV</a> ou à 
+                <a href="#contact" class="fw-bold text-white">me contacter directement</a>. Vous pouvez également prendre le temps d'explorer mes <a href="#challenges" class="fw-bold text-white">Challenges CTF</a>.
+                </h3>
+                <h3>
+                En attendant, je vous souhaite un voyage fascinant à travers mon <span class="fw-bold">océan cybernétique</span> en constante expansion.
+                </h3>
+            </div>
+            </div>
+            <br><br><br><br><br><br><br><br><br>
+            <div class="row">
+                <% const whatICanDo = [
+                { title: "Python", imgSrc: "/images/achievements/python.png", description: "J'utilise Python de manière intensive pour le scripting en hacking éthique, l'automatisation des tâches et la résolution de Challenges. De plus, je l'utilise pour résoudre des problèmes algorithmiques sur des plateformes comme LeetCode et pour développer divers projets, démontrant ainsi sa polyvalence et sa puissance." },
+                { title: "C", imgSrc: "/images/achievements/c.png", description: "Avec une solide base en programmation bas niveau, j'utilise C pour comprendre et manipuler les opérations au niveau système. Mon expertise s'étend au reverse engineering de base et à l'analyse binaire." },
+                { title: "Kali Linux", imgSrc: "/images/achievements/linux.png", description: "En tant que système d'exploitation principal pour le hacking éthique et les tests d'intrusion, Kali Linux m'équipe d'une suite complète d'outils pour les tâches de cybersécurité. Ma maîtrise de Kali Linux me permet d'identifier et d'exploiter efficacement les vulnérabilités dans divers systèmes." },
+                { title: "Git", imgSrc: "/images/achievements/git.jpg", description: "Je maîtrise l'utilisation de Git pour le contrôle de version, garantissant une collaboration fluide et une gestion efficace des bases de code. Que ce soit en travaillant individuellement ou en équipe, Git me permet de maintenir un flux de travail structuré et organisé pour le développement logiciel." },
+                { title: "Cryptanalyse", imgSrc: "/images/achievements/cryptanalysis.svg", description: "Mes compétences en cryptanalyse impliquent l'étude et le décryptage des systèmes cryptographiques pour évaluer leur sécurité. Cette expertise aide à identifier les faiblesses et à garantir la robustesse des mécanismes de chiffrement." },
+                { title: "Analyse réseau", imgSrc: "/images/achievements/network.svg", description: "Je me spécialise dans l'inspection et l'analyse des protocoles réseau pour identifier les vulnérabilités, optimiser les performances et garantir une communication sécurisée. Mes connaissances s'étendent aux outils et techniques de surveillance et de dépannage des problèmes réseau." },
+                { title: "Pentest web", imgSrc: "/images/achievements/web.svg", description: "J'excelle dans l'analyse des applications web pour détecter les vulnérabilités, en utilisant des techniques telles que l'injection SQL, XSS et les tests CSRF, ainsi que la maîtrise des langages de programmation web (HTML, JS, PHP...). Mon objectif est d'assurer la sécurité et l'intégrité des systèmes web en identifiant et en atténuant les menaces potentielles." },
+                { title: "Forensique", imgSrc: "/images/achievements/forensics.svg", description: "Avec un œil attentif aux détails, j'enquête sur les preuves numériques pour découvrir la vérité derrière les incidents cybernétiques. Mon expertise en forensique inclut la récupération de données, l'analyse de logiciels malveillants et la traçabilité des origines des violations de sécurité." },
+                { title: "Reverse engineering", imgSrc: "/images/achievements/reverse.svg", description: "Je possède des compétences fondamentales en reverse engineering, me permettant d'analyser des binaires, de comprendre le comportement des logiciels et d'identifier les vulnérabilités potentielles. Ces connaissances sont cruciales pour le débogage et l'amélioration de la sécurité des systèmes." },
+                { title: "Encore plus", imgSrc: "/images/achievements/more.png", description: "Je suis toujours désireux d'apprendre et de maîtriser de nouvelles technologies et outils. Mon adaptabilité et ma curiosité me poussent à explorer des domaines émergents et à élargir mes compétences pour rester à la pointe dans le monde en constante évolution de la technologie." },
+                ]; %>
+                <% const whatIHaveDone = [
+                    { title: "Projet de programmation AIge of EmpAIre", imgSrc: "/images/achievements/projet_python.png", description: "Développer une simulation simple du jeu AoE basée sur l'IA en Python et établir des instances de jeu multijoueur décentralisées en LAN à l'aide de sockets C.", link: "https://github.com/Maxeuh/AIge-of-EmpAIres", altLink: "Github"},
+                    { title: "CTF InterINSA", imgSrc: "/images/achievements/ctf_InterINSA.png", description: "Représenter l'INSA CVL et participer au concours CTF en équipe contre les universités du groupe INSA." },
+                    { title: "FCSC 2025", imgSrc: "/images/achievements/fcsc.jpg", description: "Terminer le concours national CTF France Cybersecurity Challenge (FCSC) au classement 109/2046.", link: "https://fcsc.fr/users/1049", altLink: "nnlamm@FCSC_2025" },
+                    { title: "CTF TryHackMe", imgSrc: "/images/achievements/thm.png", description: "Apprendre activement et résoudre des Challenges CTF sur TryHackMe en dehors de l'école et des concours.", link: "https://tryhackme.com/p/nhatlamnguyen121", altLink: "nhatlamnguyen121@THM" },
+                    { title: "CTF RootMe", imgSrc: "/images/achievements/rootme.jpeg", description: "Participer à des Challenges CTF sur RootMe et gagner des points.", link: "https://www.root-me.org/nnlam12", altLink: "nnlam12@ROOTME" },
+                ]; %>
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">Ce que je peux faire</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <% whatICanDo.forEach((item, index) => { %>
+                            <div class="col text-center d-flex justify-content-center mb-4">
+                                <div class="card skill-card position-relative overflow-hidden">
+                                    <div class="card-inner">
+                                        <div class="card-front d-flex flex-column justify-content-center align-items-center">
+                                            <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="card-img-top" style="max-height:120px;object-fit:contain;">
+                                        </div>
+                                        <div class="card-back d-flex flex-column justify-content-center align-items-center text-center px-2 py-3">
+                                            <h5 class="fw-bold card-title mb-2"
+                                                style="font-family: 'Poppins', sans-serif; font-size: 0.80rem; color: #ffd700; letter-spacing: 0.5px;">
+                                                <%= item.title %>
+                                            </h5>
+                                            <hr style="width: 60%; border-top: 1px solid #ffd700; margin: 0.3rem auto 0.7rem auto; opacity: 0.5;">
+                                            <p class="mb-0"
+                                               style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f8f9fa;">
+                                                <%= item.description || "Pas de description disponible" %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">Ce que j'ai accompli</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <% whatIHaveDone.forEach(item => { %>
+                        <div class="col text-center d-flex justify-content-center mb-4">
+                            <div class="card skill-card position-relative overflow-hidden">
+                                <div class="card-inner">
+                                    <div class="card-front d-flex flex-column justify-content-center align-items-center">
+                                        <img src="<%= item.imgSrc %>" alt="<%= item.title %>" class="card-img-top" style="max-height:120px;object-fit:contain;">
+                                    </div>
+                                    <div class="card-back d-flex flex-column justify-content-center align-items-center text-center px-2 py-3">
+                                        <h5 class="fw-bold card-title mb-2"
+                                            style="font-family: 'Poppins', sans-serif; font-size: 0.80rem; color: #ffd700; letter-spacing: 0.5px;">
+                                            <%= item.title %>
+                                        </h5>
+                                        <hr style="width: 60%; border-top: 1px solid #ffd700; margin: 0.3rem auto 0.7rem auto; opacity: 0.5;">
+                                        <p class="mb-0"
+                                           style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f8f9fa;">
+                                            <%= item.description || "Pas de description disponible" %>
+                                        </p>
+                                        <% if (item.link && item.altLink) { %>
+                                            <a href="<%= item.link %>" class=" btn-primary mt-2" target="_blank" rel="noopener noreferrer">
+                                                <%= item.altLink %>
+                                            </a>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="challenges" class="py-5">
+        <div class="container ">
+            <h1 class="text-center mb-4">Challenges</h1>
+            <div class="row justify-content-center">                                                                                                                                                                                                                                                                                                                                                                                                                
+                <% const challenges = [
+                    { src: "/images/CaTF.png", alt: "CaTF", popup: "Aidez Ethel à retrouver son ami au fond de l'océan.", text: "Une aventure sous-marine amusante et engageante.", link: "https://catf.nnlamcyber.com", altLink: "Commencer le défi" }
+                ]; %>
+
+                <% challenges.forEach((challenge, index) => { %>
+    <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <div class="card challenge-card position-relative overflow-hidden">
+            <div class="card-inner">
+                <div class="card-front d-flex flex-column justify-content-center align-items-center">
+                    <img src="<%= challenge.src %>" class="card-img-top" alt="<%= challenge.alt %>" style="max-height:180px;object-fit:contain;">
+                </div>
+                <div class="card-back d-flex flex-column justify-content-center align-items-center text-center px-2 py-3">
+                    <h5 class="fw-bold card-title mb-2"
+                        style="font-family: 'Poppins', sans-serif; font-size: 0.80rem; color: #ffd700; letter-spacing: 0.5px;">
+                        <%= challenge.alt %>
+                    </h5>
+                    <hr style="width: 60%; border-top: 1px solid #ffd700; margin: 0.3rem auto 0.7rem auto; opacity: 0.5;">
+                    <p class="mb-1"
+                       style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f8f9fa;">
+                        <%= challenge.popup %>
+                    </p>
+                    <p class="mb-0"
+                       style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f8f9fa;">
+                        <%= challenge.text %>
+                    </p>
+                    <% if (challenge.link && challenge.altLink) { %>
+                        <a href="<%= challenge.link %>" class=" btn-primary mt-2" target="_blank" rel="noopener noreferrer">
+                            <%= challenge.altLink %>
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% }); %>
+            </div>
+    </section>
+    <section id="contact" class=" py-5">
+        <h1 class="text-center mb-4">Contact</h1>
+        <p   class="text-center">N'hésitez pas à me contacter </p>
+        <h6 class="text-center; font-size: 0.20rem">Pour discuter d'opportunités professionnelles, poser des questions sur les Challenges ou simplement échanger </h6>
+        <div class="d-flex justify-content-center">
+            <a href="https://github.com/nnlam12" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/github.png" alt="LinkedIn" style="height: 120px; width: 100px; margin-right: 5px;">
+            </a>
+            <a href="https://www.linkedin.com/in/nhat-lam-nguyen/" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/linkedin.png" alt="LinkedIn" style="height: 120px; width: 120px; margin-right: 5px;">
+            </a>
+            <a href="mailto:nhatlamnguyen121212@gmail.com" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/email.png" alt="Email" style="height: 120px; width: 120px; margin-right: 5px;">
+            </a>
+            <a href="https://tryhackme.com/p/nhatlamnguyen121" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/tryhackme.png" alt="TryHackMe" style="height: 120px; width: 120px; margin-right: 5px;">
+            </a>
+            <a href="https://www.root-me.org/nnlam12" target="_blank" rel="noopener noreferrer">
+                <img src="/images/icons/rootme.svg" alt="RootMe" style="height: 120px; width: 120px; margin-right: 5px;">
+            </a>
+        </div>
+    </section>
+    
+    <!-- Floating Language Toggle Button -->
+    <button id="languageToggle" class="btn btn-secondary">
+        <img src="/images/icons/en.png" alt="French Flag" style="width: 24px; height: 24px;">
+    </button>
+
+    <footer class="text-center py-3 bg-dark text-white">
+        <p><%= year %> Mon Portfolio par Nhat-Lam Nguyen</p>
+    </footer>
+
+    <script>
+        // JavaScript for toggling language
+        function toggleLanguage() {
+            const currentUrl = window.location.href;
+            if (currentUrl.includes('/en')) {
+                window.location.href = currentUrl.replace('/en', '/fr');
+            } else {
+                window.location.href = currentUrl.replace('/fr', '/en');
+            }
+        }
+
+        // Add event listener to the floating button
+        document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
+    </script>
+
+    <style>
+        /* CSS for the floating button */
+        #languageToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+        }
+
+        #languageToggle img {
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <script src="/scripts.js"></script>
+    
+</body>
+</html>

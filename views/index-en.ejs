@@ -31,13 +31,16 @@
             <img src="/images/photo_pro.jpg" alt="Profile Picture" class="img-fluid">
         </div>
         <h1 class="fw-bold">Hello!</h1>
-        <h3>My name is <span class="fw-bold">Nguyen Nhat Lam</span>. I'm an engineering student in 3rd year at <a href="https://www.insa-centrevaldeloire.fr/" target="_blank" rel="noopener noreferrer" class="fw-bold text-white">INSA Centre Val-de-Loire</a>. Currently, I'm aiming to ...</h3>
+        <h3>My name is <span class="fw-bold">Nhat Lam NGUYEN</span>. I'm an engineering student in 3rd year at <a href="https://www.insa-centrevaldeloire.fr/" target="_blank" rel="noopener noreferrer" class="fw-bold text-white">INSA Centre Val-de-Loire</a>. Currently, I'm aiming to ...</h3>
         <div class="text-box bg-light text-dark p-3 rounded">
             <h3 class="fw-bold">Sign an apprenticeship contract starting September 2025 with a focus on Cybersecurity/Pentesting</h3>
         </div>
         <div class="mt-4"></div>
-            <a href="/documents/CV.pdf" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Download My CV</a>
+            <a href="/documents/CV_Nhat_Lam_NGUYEN_INSA_CVL_en.pdf" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Download My CV</a>
         </div>
+        <div class="mt-4"></div>
+        <a href="/documents/Calendrier_apprentissage_2024_-_2027.pdf" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Download My Apprenticeship's Calendar</a>
+    </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
     <section id="about" class="py-5">
@@ -92,7 +95,7 @@
                     { title: "Programming Project AIge of EmpAIre", imgSrc: "/images/achievements/projet_python.png", description: "Develop a simple AI-based simulation of the game AoE in Python and establish decentralised multiplayer game instances on LAN network using C sockets.", link: "https://github.com/Maxeuh/AIge-of-EmpAIres", altLink: "Github"},
                     { title: "CTF InterINSA", imgSrc: "/images/achievements/ctf_InterINSA.png", description: "Represent INSA CVL and compete in the CTF team contest against universities in the INSA group." },
                     { title: "FCSC 2025", imgSrc: "/images/achievements/fcsc.jpg", description: "Finish the national CTF contest France Cybersecurity Challenge(FCSC) at ranking 109/2046.", link: "https://fcsc.fr/users/1049", altLink: "nnlamm@FCSC_2025" },
-                    { title: "CTF TryHackMe", imgSrc: "/images/achievements/thm.png", description: "Actively learn and solve CTFs challenges on Tryhackme aside from school and contests", link: "https://tryhackme.com/p/nhatlamnguyen121", altLink: "nhatlamnguyen121@THM" },
+                    { title: "CTF TryHackMe", imgSrc: "/images/achievements/thm.png", description: "Actively learn and solve CTFs challenges on Tryhackme aside from school and contests.", link: "https://tryhackme.com/p/nhatlamnguyen121", altLink: "nhatlamnguyen121@THM" },
                     { title: "CTF RootMe", imgSrc: "/images/achievements/rootme.jpeg", description: "Participate in CTF challenges on RootMe and earn points.", link: "https://www.root-me.org/nnlam12", altLink: "nnlam12@ROOTME" },
                 ]; %>
                 <div class="col-md-6">
@@ -220,9 +223,50 @@
             </a>
         </div>
     </section>
+
+    <!-- Floating Language Toggle Button -->
+    <button id="languageToggle" class="btn btn-secondary">
+        <img src="/images/icons/fr.png" alt="French Flag" style="width: 24px; height: 24px;">
+    </button>
+
     <footer class="text-center py-3 bg-dark text-white">
-        <p><%= year %> My Portfolio</p>
+        <p><%= year %> My Portfolio by Nhat-Lam Nguyen</p>
     </footer>
+
+    <script>
+        // JavaScript for toggling language
+        function toggleLanguage() {
+            const currentUrl = window.location.href;
+            if (currentUrl.includes('/en')) {
+                window.location.href = currentUrl.replace('/en', '/fr');
+            } else {
+                window.location.href = currentUrl.replace('/fr', '/en');
+            }
+        }
+
+        // Add event listener to the floating button
+        document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
+    </script>
+
+    <style>
+        /* CSS for the floating button */
+        #languageToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+        }
+
+        #languageToggle img {
+            display: block;
+            margin: auto;
+        }
+    </style>
     <script src="/scripts.js"></script>
     
 </body>

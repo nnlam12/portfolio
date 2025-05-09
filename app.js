@@ -10,8 +10,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', (req, res) => {
+    res.redirect('/fr');
+});
+
+app.get('/en', (req, res) => {
     const currentYear = new Date().getFullYear();
-    res.render('index', { year: currentYear });
+    res.render('index-en', { year: currentYear });
+});
+
+app.get('/fr', (req, res) => {
+    const currentYear = new Date().getFullYear();
+    res.render('index-fr', { year: currentYear });
 });
 
 // Start the server
